@@ -7,7 +7,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { JobTop10listComponent } from './features/job-top10list/job-top10list.component';
+import { JobRecentComponent } from './features/job-recent/job-recent.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +18,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 @NgModule({
   declarations: [
     AppComponent,
-    JobTop10listComponent
+    JobRecentComponent
   ],
   imports: [
     BrowserModule,

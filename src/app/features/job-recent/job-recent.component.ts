@@ -3,11 +3,11 @@ import { ApiService } from '../../core/services/api.service';
 import { JobTop10Dto } from '../../core/models/jobtop10dto.model';
 
 @Component({
-  selector: 'app-job-top10list',
-  templateUrl: './job-top10list.component.html',
-  styleUrl: './job-top10list.component.css'
+  selector: 'app-job-recent',
+  templateUrl: './job-recent.component.html',
+  styleUrl: './job-recent.component.css'
 })
-export class JobTop10listComponent implements OnInit{
+export class JobRecentComponent implements OnInit{
   jobs: JobTop10Dto[] = [];
   isLoading: boolean = true; 
   hasError: boolean = false;
