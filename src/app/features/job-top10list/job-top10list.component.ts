@@ -11,6 +11,9 @@ export class JobTop10listComponent implements OnInit{
   jobs: JobTop10Dto[] = [];
   isLoading: boolean = true; 
   hasError: boolean = false;
+  trackByJob(index: number, job: JobTop10Dto): number {
+    return job.id;
+  }
 
   constructor(private apiService: ApiService){}
 

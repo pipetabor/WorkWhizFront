@@ -1,143 +1,61 @@
-:host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
 /* Center the spinner */
 .loading-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;  /* Adjust height as needed */
-  }
-  
-  /* Error message styles */
-  .error-message {
-    color: red;
-    text-align: center;
-    font-size: 1.2em;
-    margin: 20px 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
 
-  h1{
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+/* Error message styles */
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
 
+/* Loading message */
+.loading-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.job-list {
-    padding: 1rem;
-    h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  
-    .job-card {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-      h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-  
-      p {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 1rem;
-      }
-  
-      ul {
-        list-style-type: none;
-        padding: 0;
-  
-        li {
-          font-size: 0.875rem;
-          margin-bottom: 0.5rem;
-  
-          strong {
-            color: #333;
-          }
-        }
-      }
-    }
-  
-    
-    @media (min-width: 768px) {
-      .job-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .job-info {
-        flex: 1;
-        padding-right: 2rem;
-      }
-    }
-  
-    @media (min-width: 1024px) {
-      .job-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-    }
-  
-    @media (max-width: 767px) {
-      .job-card {
-        padding: 1rem;
-      }
-  
-      ul {
-        li {
-          font-size: 0.75rem;
-        }
-      }
-    }
-  }
-  
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+
+.job-card {
+  border-color: darkgray;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1), 0 1px 1px 0 rgba(0, 0, 0, 1),
+    0 1px 3px 0 rgba(0, 0, 0, 1);
+}
+
+.job-card:hover {
+  border-color: #68e76f;
+}
+
+.actions-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bid-button {
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.bid-button:hover {
+  background-color: #388e3c;
+}
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
