@@ -1,0 +1,30 @@
+<div class="job-list">
+    <h2>Recent Jobs</h2>
+  
+    <!-- Loading Indicator with mat-progress-spinner -->
+    <div *ngIf="isLoading" class="loading-indicator">
+      <mat-spinner diameter="50" color="primary"></mat-spinner>
+    </div>
+  
+    <!-- Error Handling -->
+    <div *ngIf="hasError" class="error-message">
+      <p>Failed to load jobs. Please try again later.</p>
+    </div>
+  
+    <!-- Job List Display -->
+    <div *ngIf="!isLoading && !hasError">
+      <div class="job-card" *ngFor="let job of jobs">
+        <div class="job-info">
+          <h3>{{ job.name }}</h3>
+          <p>{{ job.description }}</p>
+          <ul>
+            <li><strong>Posted:</strong> {{ job.postedDate | date: 'short' }}</li>
+            <li><strong>Expires:</strong> {{ job.expirationDate | date: 'short' }}</li>
+            <li><strong>Bids:</strong> {{ job.bidCount }}</li>
+            <li><strong>Status:</strong> {{ job.status }}</li>
+            <li *ngIf="job.poster?.name"><strong>Poster:</strong> {{ job.poster?.name }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
