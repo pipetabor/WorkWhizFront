@@ -1,27 +1,88 @@
-# WorkWhizFront
+# 💼 WorkWhiz – Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+This is the frontend of **WorkWhiz**, a freelance marketplace that connects clients with skilled freelancers through a bidding system.  
+Built with **Angular 17**, this application provides an intuitive interface for posting jobs, placing bids, and managing accounts.
 
-## Development server
+> 🔗 Backend repository: [WorkWhiz API](https://github.com/pipetabor/WorkWhiz)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🎯 Key Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Home with featured jobs and stats
+- Job listing and detailed views
+- Create and publish new jobs
+- Freelancers can bid on available jobs
+- Responsive layout and user-friendly design
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🧰 Tech Stack
 
-## Running unit tests
+- Angular 17.1.2
+- TypeScript
+- RxJS
+- Bootstrap
+- Angular Router
+- Reactive Forms
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## ⚙️ Local Setup
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
+```bash
+git clone https://github.com/pipetabor/WorkWhizFront.git
+cd WorkWhizFront
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the app:
+
+```bash
+ng serve
+```
+
+Then open your browser at http://localhost:4200/
+
+> 🔧 Make sure the backend API is also running locally to enable data interactions.
+
+---
+
+📸 Screenshots (TO DO)
+screenshots or UI previews:
+
+✅ Job listing view
+
+📝 Create job form
+
+💸 Place a bid modal
+
+---
+
+📌 Project Status
+  ✔️ MVP functional
+  🚧 Coming soon: login, authentication, dashboard, notifications
+
+---
+
+🤝 How to Contribute
+
+1. Fork the repository
+2. Create a new branch (git checkout -b feature/my-feature)
+3. Commit your changes (git commit -am 'Add feature')
+4. Push to your branch (git push origin feature/my-feature)
+5. Open a Pull Request 🚀
+
+---
+
+📄 License
+This project is licensed under the MIT License.
+
+---
