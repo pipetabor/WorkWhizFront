@@ -23,7 +23,7 @@ export class JobRecentComponent implements OnInit{
 
   fetchJobs(): void {
     this.isLoading = true;  // Set loading to true when fetching data
-    this.apiService.get<JobTop10Dto[]>('Job').subscribe({
+    this.apiService.get<JobTop10Dto[]>('Job/most-recent').subscribe({
       next: (data: JobTop10Dto[]) => {
         this.jobs = data;
         this.isLoading = false;  // Set loading to false when data is fetched
