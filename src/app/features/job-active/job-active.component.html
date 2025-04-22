@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">Recently posted jobs</mat-toolbar>
+<mat-toolbar color="primary">Trending jobs</mat-toolbar>
 <div class="job-list">
   <!-- Loading Indicator spinner -->
   <div *ngIf="isLoading" class="loading-indicator">
@@ -17,7 +17,7 @@
       fxFlex.xs="100%"
       fxFlex.sm="33%"
       fxFlex.gt-lg="75%"
-      *ngFor="let job of jobs; trackBy: trackByJob"
+      *ngFor="let job of jobs"
     >
       <mat-card class="job-card">
         <mat-card-header>
@@ -34,9 +34,6 @@
             <li>
               <strong>Expires:</strong>
               {{ job.expirationDate | date : "short" }}
-            </li>
-            <li *ngIf="job.poster?.name">
-              <strong>Poster:</strong> {{ job.poster?.name }}
             </li>
             <li><strong>Bids:</strong> {{ job.bidCount }}</li>
           </ul>

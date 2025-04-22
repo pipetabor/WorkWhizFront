@@ -13,12 +13,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { JobActiveComponent } from './features/job-active/job-active.component';
+import { JobDetailComponent } from './features/job-detail/job-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    JobRecentComponent
+    JobRecentComponent,
+    JobActiveComponent,
+    JobDetailComponent
   ],
   imports: [
     BrowserModule,

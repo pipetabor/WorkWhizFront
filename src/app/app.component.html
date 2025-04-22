@@ -1,2 +1,9 @@
 <app-job-recent></app-job-recent>
+@defer (on viewport){
+<app-job-active></app-job-active>
+} @placeholder {
+<p>Future jobs</p>
+} @loading (minimum 2s) {
+<p class="loading-message">Loading jobs...</p>
+}
 <router-outlet />
