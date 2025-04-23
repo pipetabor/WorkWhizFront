@@ -1,0 +1,35 @@
+<!-- src/app/features/job-active/bid-dialog/bid-dialog.component.html -->
+<h2 mat-dialog-title>Bid on “{{ data.job.name }}”</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="bidForm">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Your Bid (USD)</mat-label>
+      <input
+        matInput
+        cdkFocusInitial
+        type="number"
+        formControlName="amount"
+        step="0.01"
+      />
+      <mat-error *ngIf="bidForm.get('amount')?.hasError('required')">
+        Amount is required
+      </mat-error>
+      <mat-error *ngIf="bidForm.get('amount')?.hasError('min')">
+        Minimum bid is $0.01
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="bidForm.invalid"
+    (click)="submitBid()"
+  >
+    Submit Bid
+  </button>
+</mat-dialog-actions>
