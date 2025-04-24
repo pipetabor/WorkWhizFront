@@ -1,52 +1,55 @@
 <mat-toolbar color="primary">Trending jobs</mat-toolbar>
+
 <div class="job-list">
-  <!-- Loading Indicator spinner -->
   <div *ngIf="isLoading" class="loading-indicator">
     <mat-spinner diameter="50" color="primary"></mat-spinner>
   </div>
-  <!-- Error Handling -->
+
   <div *ngIf="hasError" class="error-message">
     <p>Failed to load jobs. Please try again later.</p>
   </div>
-</div>
-@defer (on viewport){
-<div class="content">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div
-      fxFlex="50%"
-      fxFlex.xs="100%"
-      fxFlex.sm="33%"
-      fxFlex.gt-lg="75%"
-      *ngFor="let job of jobs"
-    >
-      <mat-card class="job-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ job.name }}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>{{ job.description }}</p>
-          <ul>
-            <li><strong>Status:</strong> {{ job.status }}</li>
-            <li>
-              <strong>Posted:</strong> {{ job.postedDate | date : "short" }}
-            </li>
-            <li>
-              <strong>Expires:</strong>
-              {{ job.expirationDate | date : "short" }}
-            </li>
-            <li><strong>Bids:</strong> {{ job.bidCount }}</li>
-          </ul>
-        </mat-card-content>
-        <mat-card-actions class="actions-right">
-          <button mat-button class="bid-button">Bid now 🪙</button>
-        </mat-card-actions>
-      </mat-card>
+
+  <ng-container *ngIf="!isLoading && !hasError">
+    <div class="content">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div
+          fxFlex="50%"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          fxFlex.gt-lg="75%"
+          *ngFor="let job of jobs"
+        >
+          <mat-card class="job-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{ job.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{ job.description }}</p>
+              <ul>
+                <li><strong>Status:</strong> {{ job.status }}</li>
+                <li>
+                  <strong>Posted:</strong> {{ job.postedDate | date : "short" }}
+                </li>
+                <li>
+                  <strong>Expires:</strong>
+                  {{ job.expirationDate | date : "short" }}
+                </li>
+                <li><strong>Bids:</strong> {{ job.bidCount }}</li>
+              </ul>
+            </mat-card-content>
+            <mat-card-actions class="actions-right">
+              <button
+                mat-button
+                class="bid-button"
+                (click)="$any($event.target).blur(); openBidDialog(job)"
+              >
+                Bid now 🪙
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
     </div>
-  </div>
+  </ng-container>
 </div>
-} @placeholder {
-<p>Future jobs</p>
-} @loading (minimum 2s) {
-<p class="loading-message">Loading jobs...</p>
-}
